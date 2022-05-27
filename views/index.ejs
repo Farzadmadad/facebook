@@ -1,0 +1,35 @@
+
+<%- include("./components/header") %>
+<%- include("./addPost") %>
+<% if (result.length>0){%>
+   <% result.forEach(element => {%>
+   
+    
+    <div class="card" style="margin: 10%;">
+      <h5 class="card-header"><%=element.title%></h5>
+      <div class="card-body">
+        <h5 class="card-title"></h5>
+        <p class="card-text" style="overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 4; 
+        width: 90%;"><%=element.post%></p>
+        
+        <a href="/article/<%=element._id%>" style="margin-left: 700px;">See more</a>
+      </div>
+      <div class="card-footer text-muted">
+        <p class="card-text"><%=element.createdAt%></p>
+      </div>
+    </div>
+    
+        
+   <% });%>
+<%} else{%>
+    there is no record 
+
+<%}%>
+
+
+
+
